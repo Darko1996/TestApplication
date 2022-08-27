@@ -1,0 +1,12 @@
+<div id="search-container-autocomplete">
+  <div id="thirdDiv" class="search-input-container search-input-container-focus " >
+    <div class="input-components">
+      <label class="search-image search-image-focus"  for="search-input-autocomplete">
+        <img src="../../../../assets/images/icons/icon-search.svg" alt="search">
+      </label>
+      <input (input)="textChanged()"
+             id="search-input-autocomplete"  type="text" placeholder="Search by country" [(ngModel)]="_searchText">
+      <img *ngIf="_searchText && _searchText.length > 0" class="search-cross" src="../../../../assets/images/icons/cross.svg" alt="remove text" (click)="clearSearch()">
+    </div>
+  </div>
+</div>

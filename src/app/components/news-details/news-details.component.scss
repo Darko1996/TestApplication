@@ -1,0 +1,57 @@
+@import "../../../scss/styles";
+
+section {
+  display: flow-root;
+  margin: 5%;
+}
+
+.title {
+  font-size: 32px;
+  border-bottom: 2px solid $color-primary;
+  padding: 15px;
+  color: $color-primary;
+
+}
+.master-item {
+  font-size: 24px;
+  border-bottom: 2px solid $color-primary;
+  padding: 15px;
+  background: white;
+  color:$color-primary;
+}
+
+.text-center {
+  text-align: center;
+}
+.master-item:hover, .active-item {
+  background: $color-primary;
+  color: white;
+  cursor: pointer
+}
+
+.md-container {
+  display: flex;
+}
+
+.col-3 {width: 25%;}
+.col-9 {width: 75%;}
+
+.detail{
+  padding: 25px;
+  box-sizing: border-box;
+  z-index: 11;
+  color: $color-primary;
+  height: 100vh;
+  background: $color-snow;
+  overflow-y: auto;
+}
+
+@include for-tablet-only {
+  .md-container {
+    display: block;
+  }
+  [class*="col-"] {
+    width: 100%;
+    float: left;
+  }
+}

@@ -1,0 +1,26 @@
+<header>
+  <nav class="nav">
+    <div class="header-main">
+      <img class="logo" (click)="setPageTitle('home')" src="../../assets/images/logo.png" alt="logo">
+
+      <div class="header-container">
+        <div class="header-items-1">
+          <a routerLink="/home" (click)="setPageTitle('home')" class="btn from-center">Home</a>
+        </div>
+
+        <div class="header-items-2">
+          <app-shared-search [(searchText)]="_searchText" (textOut)="$search.next($event)"> </app-shared-search>
+          <div class="mob-menu-icon" (click)="openMobMenuToggle()">
+            <img src="../../../assets/images/icons/menu.png" alt="menu">
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mob-menu" *ngIf="openMobMenu">
+    <a routerLink="/" (click)="setPageTitle('home')" class="btn from-center" >Home</a>
+    <br>
+    <app-shared-search [(searchText)]="_searchText" (textOut)="$search.next($event)"> </app-shared-search>
+  </div>
+</header>

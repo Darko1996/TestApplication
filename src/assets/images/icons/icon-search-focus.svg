@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon-search" width="18.905" height="18.905" viewBox="0 0 18.905 18.905">
+    <defs>
+        <style>
+            .cls-1{fill:#003057}
+        </style>
+    </defs>
+    <path id="icon-search-2" d="M18.385 18.385a1.776 1.776 0 0 1-2.511 0l-3.133-3.134a8.325 8.325 0 1 1 2.511-2.511l3.134 3.134a1.775 1.775 0 0 1-.001 2.511zM8.285 2.367A5.918 5.918 0 1 0 14.2 8.285a5.918 5.918 0 0 0-5.915-5.918z" class="cls-1" data-name="icon-search"/>
+</svg>

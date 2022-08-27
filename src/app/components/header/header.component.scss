@@ -1,0 +1,162 @@
+@import "../../../scss/styles";
+
+header {
+  a {
+    color: $color-snow;
+    padding: 5px;
+  }
+
+  .btn {
+    position: relative;
+    transition: all 250ms cubic-bezier(0.77, 0, 0.175, 1);
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+    border-radius: 0;
+    margin-right: 15px;
+    justify-content: center;
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      transition: inherit;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: $color-snow;
+      transition-delay: .5s;
+    }
+
+    &:hover:before {
+      transition-delay: 0s;
+    }
+
+    &:hover:after {
+      background: $color-secondary;
+      transition-delay: .35s;
+    }
+  }
+
+  .border-left {
+    border-left: 1px solid $color-ink;
+    width: 1px;
+    height: 25px;
+    margin-right: 15px;
+  }
+
+  .from-center {
+    &:before {
+      top: -1px;
+      left: 50%;
+      height: 100%;
+      width: 0;
+      border: 1px solid $color-secondary;
+      border-left: 0;
+      border-right: 0;
+    }
+
+    &:after {
+      bottom: 0;
+      left: 0;
+      height: 0;
+      width: 100%;
+      background: $color-secondary;
+    }
+
+    &:hover:before {
+      left: 0;
+      width: 100%;
+    }
+
+    &:hover:after {
+      top: 0;
+      height: 100%;
+    }
+  }
+
+  svg {
+    position: absolute;
+    z-index: -1;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+    background-color: $color-primary;
+
+    .header-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 5%;
+      width: 100%;
+
+      .logo {
+        width: 50px;
+        margin-right: 20px;
+      }
+
+      .header-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        position: relative;
+
+        .header-items-1 {
+          display: flex;
+          align-items: center;
+          padding: 0 20px;
+        }
+
+        .header-items-2 {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          justify-content: flex-end;
+        }
+      }
+    }
+
+  }
+
+  .mob-menu-icon {
+    display: none;
+
+    img {
+      width: 30px;
+    }
+  }
+
+  .mob-menu {
+    background-color: $color-primary;
+    position: relative;
+    padding: 30px 10% 30px 5%;
+
+    .app-shared-search {
+      display: block;
+    }
+
+    .btn {
+      width: fit-content;
+    }
+  }
+
+}
+
+@include for-tablet-only {
+  .header-items {
+    justify-content: space-between;
+  }
+
+  .mob-menu-icon {
+    display: block !important;
+  }
+
+  .header-items-1, .header-items-2 app-shared-search {
+    display: none !important;
+  }
+}
+
