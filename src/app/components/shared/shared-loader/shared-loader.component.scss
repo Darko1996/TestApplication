@@ -11,7 +11,7 @@
 .full-container {
   @extend .loader-container;
   bottom: 0;
-  background: $color-ink;
+  background: $color-shadow;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
@@ -98,7 +98,7 @@
     content: '';
   }
   .loader:after {
-    background: $color-ink;
+    background: $color-shadow;
     width: 75%;
     height: 75%;
     border-radius: 50%;

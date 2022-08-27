@@ -9,4 +9,8 @@
       <img *ngIf="_searchText && _searchText.length > 0" class="search-cross" src="../../../../assets/images/icons/cross.svg" alt="remove text" (click)="clearSearch()">
     </div>
   </div>
+  <ul class="search-options-list" *ngIf="isOpen">
+    <li (click)="onClick(item)" *ngFor="let item of filteredOptions" class="search-text">{{ item.name }}</li>
+    <li (click)="notFound()" *ngIf="filteredOptions && filteredOptions.length === 0"><span class="search-text">no item found</span></li>
+  </ul>
 </div>

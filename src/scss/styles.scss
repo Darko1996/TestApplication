@@ -23,6 +23,10 @@ a {
   align-items: center;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 // Responsive mixins
 @mixin for-phone-only {
   @media (max-width: 600px) { @content; }

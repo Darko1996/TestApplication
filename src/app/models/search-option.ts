@@ -1,5 +1,4 @@
 export class SearchOption {
-  id?: string;
+  id?: number;
   name: string;
-  place: string;
 }

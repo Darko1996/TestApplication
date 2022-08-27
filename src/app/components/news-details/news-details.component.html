@@ -1,14 +1,20 @@
 <section [@slideIn]>
-  <h1 class="title text-center">{{news?.title}} Details</h1>
-  <div class="md-container">
-    <div class="col-3 master">
-      <div class="master-item" >Comics</div>
-    </div>
-    <div  class="col-9 detail">
-      <h1 class="detail-title text-center">{{title}}</h1>
-      <div *ngFor="let item of selectedOption">
-        <p>{{item.name}}</p>
+  <div class="container">
+    <article class="item-pane">
+      <div class="item-preview">
+        <img class="book" src="{{news?.image}}" alt="{{news?.title}}">
       </div>
-    </div>
+      <div class="item-details">
+        <h1>{{news?.title}}</h1>
+        <div class="pane__section">
+          <p>
+            {{news?.description}}
+          </p>
+        </div>
+        <div class="pane__section">
+          <p class="capitalize">Country: {{news?.place}}</p>
+        </div>
+      </div>
+    </article>
   </div>
 </section>

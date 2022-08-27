@@ -4,6 +4,7 @@ import {FormsModule} from "@angular/forms";
 import {NgxPaginationModule} from "ngx-pagination";
 import {CommonModule} from "@angular/common";
 import {HomeRoutingModule} from "./home-routing.module";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {HomeRoutingModule} from "./home-routing.module";
     FormsModule,
     NgxPaginationModule,
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SharedModule
   ]
 })
 export class HomeModule { }

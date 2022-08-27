@@ -28,4 +28,8 @@ export class NewsService {
     options.params = convertToQueries(options.params, {place:text, pageSize, offset });
     return this.http.get<News[]>(`${environment.apiUrl}${NewsService.ROOT_ENDPOINT}`, options);
   }
+
+  getSearchOptions(): Observable<any> {
+    return this.http.get<any>(`${environment.apiUrl}${NewsService.ROOT_ENDPOINT}`);
+  }
 }

@@ -9,7 +9,9 @@
         </div>
 
         <div class="header-items-2">
-          <app-shared-search [(searchText)]="_searchText" (textOut)="$search.next($event)"> </app-shared-search>
+          <app-shared-search [(searchText)]="_searchText" [open]="true" (textOut)="$search.next($event)"
+                             [items]="allNews" (selectOption)="selectSymbol($event)">
+          </app-shared-search>
           <div class="mob-menu-icon" (click)="openMobMenuToggle()">
             <img src="../../../assets/images/icons/menu.png" alt="menu">
           </div>
@@ -21,6 +23,8 @@
   <div class="mob-menu" *ngIf="openMobMenu">
     <a routerLink="/" (click)="setPageTitle('home')" class="btn from-center" >Home</a>
     <br>
-    <app-shared-search [(searchText)]="_searchText" (textOut)="$search.next($event)"> </app-shared-search>
+    <app-shared-search [(searchText)]="_searchText" [open]="true" (textOut)="$search.next($event)"
+                       [items]="allNews" (selectOption)="selectSymbol($event)">
+    </app-shared-search>
   </div>
 </header>

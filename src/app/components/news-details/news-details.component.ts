@@ -33,7 +33,6 @@ export class NewsDetailsComponent implements OnInit {
     this.loader.showFullLoader();
 
     this.newsDetailsService.getNewsDetail(this.newsId).pipe(
-      map((result => result.data.results[0])),
       finalize( () => this.loader.dismissLoader()))
       .subscribe((data: News) => {
       console.log('news-detail', data);
