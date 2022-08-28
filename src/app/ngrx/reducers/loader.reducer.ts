@@ -1,5 +1,5 @@
 import { LoaderActions, START_LOADER, STOP_LOADER } from '../actions/loader.actions';
-import { LoaderType } from '../../models/loaderType';
+import { LoaderType } from '../../components/shared/models/loaderType.model';
 
 export interface State {
   loader: boolean;

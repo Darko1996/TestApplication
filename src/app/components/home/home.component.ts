@@ -1,16 +1,17 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {finalize, Subject, takeUntil} from "rxjs";
 import {Router} from "@angular/router";
 import {ToastrService} from 'ngx-toastr';
 import {slideIn} from "../../animations";
-import {News} from "../../models/news";
-import {NewsService} from "../../services/news.service";
-import {SharedLoaderService} from "../../services/shared-loader.service";
+import {News} from "./news.model";
+import {NewsService} from "./news.service";
+import {SharedLoaderService} from "../shared/services/shared-loader.service";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [slideIn]
 })
 export class HomeComponent implements OnInit, OnDestroy {
@@ -23,7 +24,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private newsService: NewsService,
               private router: Router,
               private toastr: ToastrService,
-              private loader: SharedLoaderService) { }
+              private loader: SharedLoaderService,
+              private changeDetector: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.loader.showFullLoader();
@@ -41,9 +43,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       finalize( () => {
         this.loader.dismissLoader();
         this.showSmallLoader = false
+        this.changeDetector.detectChanges();
       })).subscribe((data: News[]) => {
       this.news = data;
-    },(err) => {
+      },(err) => {
         this.toastr.error(err);
       });
   }

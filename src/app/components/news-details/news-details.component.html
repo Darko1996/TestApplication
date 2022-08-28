@@ -1,20 +1,22 @@
-<section [@slideIn]>
-  <div class="container">
-    <article class="item-pane">
-      <div class="item-preview">
-        <img class="book" src="{{news?.image}}" alt="{{news?.title}}">
-      </div>
-      <div class="item-details">
-        <h1>{{news?.title}}</h1>
-        <div class="pane__section">
-          <p>
-            {{news?.description}}
-          </p>
+<main>
+  <section [@slideIn]>
+    <div class="container">
+      <article class="item-pane">
+        <div class="item-preview">
+          <img class="book" src="{{news?.image}}" alt="{{news?.title}}">
         </div>
-        <div class="pane__section">
-          <p class="capitalize">Country: {{news?.place}}</p>
+        <div class="item-details">
+          <h1>{{news?.title}}</h1>
+          <div class="pane__section">
+            <p>
+              {{news?.description}}
+            </p>
+          </div>
+          <div class="pane__section">
+            <p>Country: {{news?.place}}</p>
+          </div>
         </div>
-      </div>
-    </article>
-  </div>
-</section>
+      </article>
+    </div>
+  </section>
+</main>

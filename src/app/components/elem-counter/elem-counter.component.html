@@ -1,13 +1,10 @@
 <section>
   <div class="sec-1">
     <div class="sec-1-1">
-      <p>Counter: </p><h4 *ngIf="newsCounter && newsCounter.length">{{newsCounter.length}}</h4>
+      <p>NEWS Counter: </p><h4 *ngIf="newsCounter && newsCounter.length">{{newsCounter.length}}</h4>
     </div>
     <div class="sec-1-2">
-      <app-shared-search [(searchText)]="_searchText" [open]="true" (textOut)="$search.next($event)"
-                         [items]="allNews" (selectOption)="selectSymbol($event)">
-      </app-shared-search>
+      <app-shared-search [(searchText)]="_searchText" (textOut)="$search.next($event)"></app-shared-search>
     </div>
   </div>
-
 </section>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import * as fromApp from '../ngrx/app.reducer';
-import * as Loader from '../ngrx/actions/loader.actions';
+import * as fromApp from '../../../ngrx/app.reducer';
+import * as Loader from '../../../ngrx/actions/loader.actions';
 import { Store } from '@ngrx/store';
 
 @Injectable({

@@ -1,37 +1,39 @@
-<section class="section-1" [@slideIn]>
-  <div class="elem-search-sec">
-    <app-elem-counter [newsCounter]="news"></app-elem-counter>
-  </div>
-
-  <div class="products-main">
-    <div class="title">
-      <h1>List of news</h1>
+<main [@slideIn]>
+  <section class="section-1" >
+    <div class="elem-search-sec">
+      <app-elem-counter [newsCounter]="news"></app-elem-counter>
     </div>
 
-    <app-shared-small-loader *ngIf="showSmallLoader"></app-shared-small-loader>
+    <div class="products-main">
+      <div class="title">
+        <h1>List of news</h1>
+      </div>
 
-    <div class="products" *ngIf="news && news.length && !showSmallLoader">
-      <div class="box" *ngFor="let n of news"
-           (click)="redirectToNewsDetails(n)">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <div class="content">
-          <img src="{{n?.image}}" alt="{{n?.title}}">
-          <div class="details">
-            <h3>{{n?.title}}</h3>
-            <h4 class="capitalize">{{n?.place}}</h4>
-            <p>{{n?.description}}</p>
+      <app-shared-small-loader *ngIf="showSmallLoader"></app-shared-small-loader>
+
+      <div class="products" *ngIf="news && news.length && !showSmallLoader">
+        <div class="box" *ngFor="let n of news"
+             (click)="redirectToNewsDetails(n)">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <div class="content">
+            <img src="{{n?.image}}" alt="{{n?.title}}">
+            <div class="details">
+              <h3>{{n?.title}}</h3>
+              <h4>{{n?.place}}</h4>
+              <p>{{n?.description}}</p>
+            </div>
           </div>
-        </div>
 
+        </div>
+      </div>
+      <div class="no-items" *ngIf="news && news.length === 0 && !showSmallLoader">
+        <h3>No news found</h3>
       </div>
     </div>
-    <div class="no-items" *ngIf="news && news.length === 0 && !showSmallLoader">
-      <h3>No news found</h3>
-    </div>
-  </div>
 
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f3f4f5" fill-opacity="1" d="M0,288L480,128L960,192L1440,96L1440,0L960,0L480,0L0,0Z"></path></svg>
-</section>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f3f4f5" fill-opacity="1" d="M0,288L480,128L960,192L1440,96L1440,0L960,0L480,0L0,0Z"></path></svg>
+  </section>
+</main>

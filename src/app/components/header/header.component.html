@@ -1,7 +1,7 @@
 <header>
   <nav class="nav">
     <div class="header-main">
-      <img class="logo" (click)="setPageTitle('home')" src="../../assets/images/logo.png" alt="logo">
+      <img class="logo" src="../../assets/images/logo.png" alt="logo">
 
       <div class="header-container">
         <div class="header-items-1">
@@ -9,7 +9,7 @@
         </div>
 
         <div class="header-items-2">
-          <a routerLink="/home" (click)="setPageTitle('home')" class="btn from-center">Home</a>
+          <a routerLink="/home" (click)="setPageTitle('Home')" class="btn from-center home-link">Home</a>
           <div class="mob-menu-icon" (click)="openMobMenuToggle()">
             <img src="../../../assets/images/icons/menu.png" alt="menu">
           </div>
@@ -19,6 +19,6 @@
   </nav>
 
   <div class="mob-menu" *ngIf="openMobMenu">
-    <a routerLink="/" (click)="setPageTitle('home')" class="btn from-center" >Home</a>
+    <a routerLink="/" (click)="setPageTitle('Home')" class="btn from-center" >Home</a>
   </div>
 </header>
