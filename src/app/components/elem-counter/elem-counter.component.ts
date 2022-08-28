@@ -16,7 +16,7 @@ export class ElemCounterComponent implements OnInit, OnDestroy {
   $search = new Subject<string>();
   _searchText: string;
 
-  constructor() { }
+  constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
     this.$search.pipe(
@@ -25,7 +25,7 @@ export class ElemCounterComponent implements OnInit, OnDestroy {
       distinctUntilChanged())
       .subscribe((text: string) => {
         this._searchText = text;
-        // this.newsService.emitNews(this._searchText);
+        this.newsService.emitNews(this._searchText);
       });
   }
 

@@ -165,8 +165,6 @@ section {
       }
     }
   }
-
-
 }
 
 @include for-phone-only {
@@ -186,17 +184,4 @@ section {
       }
     }
   }
-}
-
-// Pagination
-pagination-controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-
-  ::ng-deep pagination-template .current {
-    background: $color-primary !important;
-  }
-
 }

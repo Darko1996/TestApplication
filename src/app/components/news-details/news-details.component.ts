@@ -17,8 +17,6 @@ import {News} from "../home/news.model";
 export class NewsDetailsComponent implements OnInit {
   news: News;
   newsId: any;
-  selectedOption: any;
-  title: string;
 
   constructor(private activatedRoute: ActivatedRoute,
               private newsDetailsService: NewsDetailsService,
@@ -38,18 +36,10 @@ export class NewsDetailsComponent implements OnInit {
       finalize( () => {
         this.loader.dismissLoader();
         this.changeDetector.detectChanges();
-      }))
-      .subscribe((data: News) => {
-      console.log('news-detail', data);
-      this.news = data;
+      })).subscribe((data: News) => {
+        this.news = data;
       },(err) => {
         this.toastr.error(err);
       });
   }
-
-  select(data: any, title: string): void {
-    this.title = title;
-    this.selectedOption = data.items;
-  }
-
 }

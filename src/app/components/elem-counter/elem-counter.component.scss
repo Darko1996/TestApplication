@@ -35,7 +35,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
   }
+}
 
+@include for-phone-only {
+  .sec-1 {
+    display: block;
+  }
 }
