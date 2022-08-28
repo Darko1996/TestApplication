@@ -23,13 +23,13 @@ export class NewsService {
     return this._subject.asObservable();
   }
 
-  getNews(text: string, pageSize?: number, offset?: number): Observable<News[]> {
+  getNews(text: string, pageSize?: number, currentPage?: number, offset?: number): Observable<News[]> {
     const options = { params: new HttpParams() }
-    options.params = convertToQueries(options.params, {place:text, pageSize, offset });
+    options.params = convertToQueries(options.params, { place:text, _page: currentPage });
     return this.http.get<News[]>(`${environment.apiUrl}${NewsService.ROOT_ENDPOINT}`, options);
   }
 
-  getSearchOptions(): Observable<any> {
-    return this.http.get<any>(`${environment.apiUrl}${NewsService.ROOT_ENDPOINT}`);
+  getSearchOptions(): Observable<News[]> {
+    return this.http.get<News[]>(`${environment.apiUrl}${NewsService.ROOT_ENDPOINT}`);
   }
 }

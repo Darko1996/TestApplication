@@ -14,15 +14,12 @@ import {SharedLoaderService} from "../../services/shared-loader.service";
   animations: [slideIn]
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  $search = new Subject<string>();
-  openMobMenu: boolean;
-  _searchText: string;
   allNews = Array<News>();
   private onDestroy = new Subject();
   searchedText: string;
   news: News[];
-  p = 1;
-  pageSize = 8;
+  currentPage = 1;
+  pageSize = 4;
   total = 0;
   offset = 0;
   showSmallLoader: boolean;
@@ -43,9 +40,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   getNews(): void {
     this.showSmallLoader = true;
-    this.offset = (this.p - 1) * this.pageSize;
+    this.offset = (this.currentPage - 1) * this.pageSize;
 
-    this.newsService.getNews(this.searchedText, this.pageSize, this.offset).pipe(
+    this.newsService.getNews(this.searchedText, this.pageSize, this.currentPage, this.total).pipe(
       finalize( () => {
         this.loader.dismissLoader();
         this.showSmallLoader = false
@@ -58,7 +55,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   pageChangeEvent(event: any){
-    this.p = event;
+    this.currentPage = event;
     this.getNews();
   }
 

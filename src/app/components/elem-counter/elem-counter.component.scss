@@ -1,0 +1,41 @@
+@import "../../../scss/styles";
+
+.sec-1 {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  padding: 50px 10%;
+  background-color: $color-pearl;
+
+  .sec-1-1, .sec-1-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sec-1-1 {
+    p {
+      font-size: 16px;
+    }
+
+    h4 {
+      background: $color-snow;
+      color: $color-secondary;
+      margin: 20px;
+      height: 60px;
+      width: 60px;
+      border-radius: 100%;
+      font-size: 23px;
+      box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.27);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .sec-1-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+}

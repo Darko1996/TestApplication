@@ -1,5 +1,8 @@
 <section class="section-1" [@slideIn]>
-  <svg class="top-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f3f4f5" fill-opacity="1" d="M0,288L480,128L960,192L1440,96L1440,320L960,320L480,320L0,320Z"></path></svg>
+  <div class="elem-search-sec">
+    <app-elem-counter [newsCounter]="news"></app-elem-counter>
+  </div>
+
   <div class="products-main">
     <div class="title">
       <h1>List of news</h1>
@@ -8,7 +11,7 @@
     <app-shared-small-loader *ngIf="showSmallLoader"></app-shared-small-loader>
 
     <div class="products" *ngIf="news && news.length && !showSmallLoader">
-      <div class="box" *ngFor="let n of news | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: total }"
+      <div class="box" *ngFor="let n of news | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: total }"
            (click)="redirectToNewsDetails(n)">
         <span></span>
         <span></span>

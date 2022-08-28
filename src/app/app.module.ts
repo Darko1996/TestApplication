@@ -15,23 +15,23 @@ import {CommonModule} from "@angular/common";
 import {HomeModule} from "./components/home/home.module";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-  ],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    SharedModule,
-    HomeModule,
-    ToastrModule.forRoot(),
-    StoreModule.forRoot(fromApp.reducers)
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+    ],
+    imports: [
+        CommonModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        SharedModule,
+        HomeModule,
+        ToastrModule.forRoot(),
+        StoreModule.forRoot(fromApp.reducers)
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
