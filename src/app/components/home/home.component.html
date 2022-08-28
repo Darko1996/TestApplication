@@ -11,7 +11,7 @@
     <app-shared-small-loader *ngIf="showSmallLoader"></app-shared-small-loader>
 
     <div class="products" *ngIf="news && news.length && !showSmallLoader">
-      <div class="box" *ngFor="let n of news | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: total }"
+      <div class="box" *ngFor="let n of news"
            (click)="redirectToNewsDetails(n)">
         <span></span>
         <span></span>
@@ -31,8 +31,6 @@
     <div class="no-items" *ngIf="news && news.length === 0 && !showSmallLoader">
       <h3>No news found</h3>
     </div>
-
-    <pagination-controls *ngIf="news && news.length" (pageChange)="pageChangeEvent($event)"></pagination-controls>
   </div>
 
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f3f4f5" fill-opacity="1" d="M0,288L480,128L960,192L1440,96L1440,0L960,0L480,0L0,0Z"></path></svg>

@@ -21,7 +21,7 @@ export class ElemCounterComponent implements OnInit, OnDestroy {
   constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
-    this.getAllNews();
+    // this.getAllNews();
 
     this.$search.pipe(
       debounceTime(500),

@@ -14,14 +14,10 @@ import {SharedLoaderService} from "../../services/shared-loader.service";
   animations: [slideIn]
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  allNews = Array<News>();
   private onDestroy = new Subject();
+  allNews = Array<News>();
   searchedText: string;
   news: News[];
-  currentPage = 1;
-  pageSize = 4;
-  total = 0;
-  offset = 0;
   showSmallLoader: boolean;
 
   constructor(private newsService: NewsService,
@@ -40,23 +36,16 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   getNews(): void {
     this.showSmallLoader = true;
-    this.offset = (this.currentPage - 1) * this.pageSize;
 
-    this.newsService.getNews(this.searchedText, this.pageSize, this.currentPage, this.total).pipe(
+    this.newsService.getNews(this.searchedText).pipe(
       finalize( () => {
         this.loader.dismissLoader();
         this.showSmallLoader = false
       })).subscribe((data: News[]) => {
       this.news = data;
-      this.total = data.length;
     },(err) => {
         this.toastr.error(err);
       });
-  }
-
-  pageChangeEvent(event: any){
-    this.currentPage = event;
-    this.getNews();
   }
 
   redirectToNewsDetails(news: News): void {

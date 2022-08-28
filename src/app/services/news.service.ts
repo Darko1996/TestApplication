@@ -23,9 +23,9 @@ export class NewsService {
     return this._subject.asObservable();
   }
 
-  getNews(text: string, pageSize?: number, currentPage?: number, offset?: number): Observable<News[]> {
+  getNews(text: string): Observable<News[]> {
     const options = { params: new HttpParams() }
-    options.params = convertToQueries(options.params, { place:text, _page: currentPage });
+    options.params = convertToQueries(options.params, { place:text });
     return this.http.get<News[]>(`${environment.apiUrl}${NewsService.ROOT_ENDPOINT}`, options);
   }
 
